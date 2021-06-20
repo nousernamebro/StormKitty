@@ -8,8 +8,8 @@ namespace StormKitty
     internal sealed class Libs
     {
 
-        public static string AnonFile = "https://raw.githubusercontent.com/LimerBoy/StormKitty/master/StormKitty/stub/packages/AnonFileApi.1.14.6/lib/net40/AnonFileApi.dll";
-        public static string ZipLib = "https://raw.githubusercontent.com/LimerBoy/StormKitty/master/StormKitty/stub/packages/DotNetZip.1.13.8/lib/net40/DotNetZip.dll";
+        public static string AnonFile = "https://raw.githubusercontent.com/nousernamebro/StormKitty/master/StormKitty/stub/packages/AnonFileApi.1.14.6/lib/net40/AnonFileApi.dll";
+        public static string ZipLib = "https://raw.githubusercontent.com/nousernamebro/StormKitty/master/StormKitty/stub/packages/DotNetZip.1.13.8/lib/net40/DotNetZip.dll";
         public static bool LoadRemoteLibrary(string library)
         {
             int i = 0;

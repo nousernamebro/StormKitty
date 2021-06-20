@@ -52,17 +52,33 @@ namespace StormKittyBuilder
             }
             // Build
             string builded = build.BuildStub();
-            string confuzed = obfuscation.Obfuscate(builded);
-            // Select icon
-            if (System.IO.Directory.Exists("icons"))
-                if (cli.GetBoolValue("Do you want change file icon?") == "1")
-                {
-                    string icon = cli.GetIconPath();
-                    if (icon != null)
-                        IconChanger.InjectIcon(confuzed, icon);
-                }
-            // Done
-            cli.ShowSuccess("Obfuscated stub: " + confuzed + " saved.");
+
+            string doObfuscate = cli.GetBoolValue("Obfuscate stub?");
+            if (doObfuscate == "Y")
+            {
+                string confuzed = obfuscation.Obfuscate(builded);
+                // Select icon
+                if (System.IO.Directory.Exists("icons"))
+                    if (cli.GetBoolValue("Do you want change file icon?") == "1")
+                    {
+                        string icon = cli.GetIconPath();
+                        if (icon != null)
+                            IconChanger.InjectIcon(confuzed, icon);
+                    }
+                // Done
+                cli.ShowSuccess("Obfuscated stub: " + confuzed + " saved.");
+            }
+            else
+            {
+                if (System.IO.Directory.Exists("icons"))
+                    if (cli.GetBoolValue("Do you want change file icon?") == "1")
+                    {
+                        string icon = cli.GetIconPath();
+                        if (icon != null)
+                            IconChanger.InjectIcon(builded, icon);
+                    }
+                cli.ShowSuccess("Builded stub: " + builded + " saved.");
+            }
             Console.ReadLine();
         }
     }

